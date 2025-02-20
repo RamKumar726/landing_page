@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
