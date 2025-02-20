@@ -29,19 +29,19 @@ export default function QuestionAnswer() {
   ];
 
   return (
-    <section id="FAQ" className="py-20 bg-white -mt-20">
+    <section id="FAQ" className="lg:py-20 py-8 -mt-20">
       <div className="px-4 md:px-40 lg:px-52">
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br bg-gray-200 p-8 mb-10 rounded">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br p-8 mb-10 rounded">
           <div className="w-full max-w-3xl space-y-6">
             {/* Heading */}
-            <motion.h1
-              className="text-3xl font-bold"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              FREQUENTLY ASKED QUESTIONS
-            </motion.h1>
+            <div className="text-center mb-12">
+              <h1 className="text-transparent bg-clip-text bg-primary text-4xl lg:text-4xl font-bold flex items-center justify-center gap-4">
+                <span className="w-16 h-2 bg-primary rounded-full"></span>
+                CRIC OPINOIN FAQ's
+                <span className="w-16 h-2 bg-primary rounded-full"></span>
+              </h1>
+              
+            </div>
 
             {/* Questions and Answers */}
             {questions.map((item, index) => (
