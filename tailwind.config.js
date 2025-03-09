@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#c80815", // Custom primary color
+        primary: "#1708c8", // Custom primary color
       },
       textShadow: {
         sm: '1px 1px 2px rgba(0, 0, 0, 0.3)',

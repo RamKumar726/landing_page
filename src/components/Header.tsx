@@ -25,9 +25,9 @@ export default function Header() {
           {/* Right Section - Image */}
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="images/mobile-1.png"
-              alt="Mobile"
-              className="w-full max-w-[200px] lg:max-w-[250px] rounded-lg transform transition-transform duration-500 hover:scale-105 object-cover"
+              src="images/mobile.png"
+              alt="CricOp"
+              className="w-[500px] h-[650px] rounded-lg transform transition-transform duration-500 hover:scale-105 object-cover"
               loading="lazy"
             />
           </div>

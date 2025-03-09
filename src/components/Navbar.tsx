@@ -44,7 +44,7 @@ export default function Navbar() {
             className="text-3xl font-bold leading-none text-white"
           >
             <img
-              src="images/logo.webp"
+              src="images/6.jpg"
               alt="Logo"
               className="w-14 h-14 rounded-full"
             />
@@ -133,7 +133,7 @@ export default function Navbar() {
                   className="mr-auto text-3xl font-bold leading-none"
                 >
                   <img
-                    src="images/logo.webp"
+                    src="images/6.jpg"
                     alt="Logo"
                     className="w-14 h-14 rounded-full"
                   />
