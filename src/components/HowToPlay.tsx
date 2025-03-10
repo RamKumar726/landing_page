@@ -58,7 +58,7 @@ export default function HowToPlay() {
       </div>
 
       {/* Steps Section */}
-      <div className="flex justify-center  px-4">
+      <div className="flex justify-center py-8 px-4">
         {/* Responsive Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-lg w-full">
           {steps.map((step, index) => (
