@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface MatchData {
@@ -15,64 +15,6 @@ interface CardProps {
   noOfCardsInARow: number;
 }
 
-// Sample match data
-const matchData: MatchData[] = [
-  {
-    team1: "PAK",
-    team2: "NZ",
-    team1Score: "187/3",
-    team2Score: "—",
-    overs: "36.1 overs",
-    question: "Pakistan to win the match vs New Zealand?",
-    status: "live",
-  },
-  {
-    team1: "IND",
-    team2: "AUS",
-    team1Score: "245/5",
-    team2Score: "—",
-    overs: "42.3 overs",
-    question: "India to chase the target against Australia?",
-    status: "upcoming",
-  },
-  {
-    team1: "ENG",
-    team2: "SA",
-    team1Score: "302/7",
-    team2Score: "289/8",
-    overs: "50 overs",
-    question: "Can South Africa win in the final over?",
-    status: "live",
-  },
-  {
-    team1: "BAN",
-    team2: "SL",
-    team1Score: "—",
-    team2Score: "—",
-    overs: "Starts in 3 hours",
-    question: "Who will win the upcoming match?",
-    status: "upcoming",
-  },
-  {
-    team1: "ZIM",
-    team2: "SA",
-    team1Score: "302/7",
-    team2Score: "289/8",
-    overs: "50 overs",
-    question: "Can South Africa win in the final over?",
-    status: "upcoming",
-  },
-  {
-    team1: "IND",
-    team2: "SL",
-    team1Score: "—",
-    team2Score: "—",
-    overs: "Starts in 3 hours",
-    question: "Who will win the upcoming match?",
-    status: "upcoming",
-  },
-];
-
 // Mapping for dynamic grid columns
 const gridColsMapping: { [key: number]: string } = {
   1: "md:grid-cols-1",
@@ -82,6 +24,7 @@ const gridColsMapping: { [key: number]: string } = {
 };
 
 export default function Cards({ noOfCardsInARow }: CardProps) {
+  const [matchData, setMatchData] = useState<MatchData[]>([]);
   const gridClass = gridColsMapping[noOfCardsInARow] || "md:grid-cols-1";
 
   // Animation variants for cards
@@ -90,13 +33,41 @@ export default function Cards({ noOfCardsInARow }: CardProps) {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  useEffect(() => {
+    const fetchMatches = async () => {
+      try {
+        const response = await fetch(
+          "https://api.cricapi.com/v1/currentMatches?apikey=66e5c7c2-5660-4be9-babc-aeb7893f6549&offset=0"
+        );
+
+        const data = await response.json();
+        console.log("data: ",data)
+        const matches = data.data.map((match: any) => ({
+          team1: match.teams[0],
+          team2: match.teams[1],
+          team1Score: match.score[0]?.r || "—",
+          team2Score: match.score[1]?.r || "—",
+          overs: match.score[0]?.o || match.score[1]?.o || "Starts soon",
+          question: `Who will win the match between ${match.teams[0]} and ${match.teams[1]}?`,
+          status: match.matchStarted ? "live" : "upcoming",
+        }));
+        setMatchData(matches.slice(0, 6)); // Only take the first 6 matches
+        // console.log(matchData, matches)
+      } catch (error) {
+        console.error("Error fetching matches:", error);
+      }
+    };
+
+    fetchMatches();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12">
       <div className="text-center">
         {/* Heading with Spans */}
         <div className="flex justify-center items-center w-full px-10">
           <h1 className="text-primary text-2xl lg:text-4xl font-bold flex items-center gap-4">
-          <span className="w-16 h-2 bg-primary rounded-full"></span>
+            <span className="w-16 h-2 bg-primary rounded-full"></span>
             CRIC OPINION - PREDICT AND WIN REAL MONEY
             <span className="w-16 h-2 bg-primary rounded-full"></span>
           </h1>

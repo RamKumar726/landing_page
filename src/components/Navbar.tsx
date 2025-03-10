@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +38,8 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-50 shadow-lg">
         <nav className="relative px-4 py-4 flex justify-between items-center bg-primary">
           {/* Logo */}
-          <Link
-            to="/"
+          <a
+            href="/"
             className="text-3xl font-bold leading-none text-white"
           >
             <img
@@ -48,7 +47,7 @@ export default function Navbar() {
               alt="Logo"
               className="w-14 h-14 rounded-full"
             />
-          </Link>
+          </a>
           {/* Burger Menu (Mobile) */}
           <div className="lg:hidden">
             <button
@@ -69,39 +68,43 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <ul className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-6">
             <li>
-              <Link
-                to="/gameofskills"
+              <a
+                href="#how-to-play" // Hash link to the section
                 className="text-sm text-white hover:text-gray-200"
+                onClick={closeMenu}
               >
                 How To Play
-              </Link>
+              </a>
             </li>
             <li className="text-gray-300"></li>
             <li>
-              <Link
-                to="/about"
+              <a
+                href="#about-us" // Hash link to the section
                 className="text-sm text-white hover:text-gray-200"
+                onClick={closeMenu}
               >
                 About Us
-              </Link>
+              </a>
             </li>
             <li className="text-gray-300"></li>
             <li>
-              <Link
-                to="/faq"
+              <a
+                href="#faq" // Hash link to the section
                 className="text-sm text-white hover:text-gray-200"
+                onClick={closeMenu}
               >
                 FAQ's
-              </Link>
+              </a>
             </li>
             <li className="text-gray-300"></li>
             <li>
-              <Link
-                to="/help"
+              <a
+                href="#help-support" // Hash link to the section
                 className="text-sm text-white hover:text-gray-200"
+                onClick={closeMenu}
               >
-                Help & Support
-              </Link>
+                Rating & Reviews
+              </a>
             </li>
           </ul>
         </nav>
@@ -128,8 +131,8 @@ export default function Navbar() {
               exit="exit"
             >
               <div className="flex items-center mb-8">
-                <Link
-                  to="/"
+                <a
+                  href="/"
                   className="mr-auto text-3xl font-bold leading-none"
                 >
                   <img
@@ -137,7 +140,7 @@ export default function Navbar() {
                     alt="Logo"
                     className="w-14 h-14 rounded-full"
                   />
-                </Link>
+                </a>
                 <button className="navbar-close" onClick={toggleMenu}>
                   <svg
                     className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
@@ -158,40 +161,40 @@ export default function Navbar() {
               <div>
                 <ul>
                   <li className="mb-1">
-                    <Link
-                      to="/gameofskills"
+                    <a
+                      href="#how-to-play" // Hash link to the section
                       className="block p-4 text-sm font-semibold text-white hover:text-blue-600"
-                      onClick={closeMenu} // Close menu on click
+                      onClick={closeMenu}
                     >
                       How To Play
-                    </Link>
+                    </a>
                   </li>
                   <li className="mb-1">
-                    <Link
-                      to="/about"
+                    <a
+                      href="#about-us" // Hash link to the section
                       className="block p-4 text-sm font-semibold text-white hover:text-blue-600"
-                      onClick={closeMenu} // Close menu on click
+                      onClick={closeMenu}
                     >
                       About Us
-                    </Link>
+                    </a>
                   </li>
                   <li className="mb-1">
-                    <Link
-                      to="/faq"
+                    <a
+                      href="#faq" // Hash link to the section
                       className="block p-4 text-sm font-semibold text-white hover:text-blue-600"
-                      onClick={closeMenu} // Close menu on click
+                      onClick={closeMenu}
                     >
                       FAQ's
-                    </Link>
+                    </a>
                   </li>
                   <li className="mb-1">
-                    <Link
-                      to="/help"
+                    <a
+                      href="#help-support" // Hash link to the section
                       className="block p-4 text-sm font-semibold text-white hover:text-blue-600"
-                      onClick={closeMenu} // Close menu on click
+                      onClick={closeMenu}
                     >
                       Help & Support
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>

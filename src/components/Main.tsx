@@ -5,11 +5,13 @@ import Cards from "./Cards.tsx";
 import WhyOpinion from "./WhyOpinion.tsx";
 import HowToPlay from "./HowToPlay.tsx";
 import QuestionAnswer from "./FAQ.tsx";
+import AboutUs from "./About.tsx";
 
 function Main() {
     return (
     <div className="mt-24">
       <Header />
+      <AboutUs />
       <Cards noOfCardsInARow={2} />
       <WhyOpinion />
       <HowToPlay />

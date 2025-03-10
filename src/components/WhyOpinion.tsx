@@ -13,12 +13,12 @@ export default function WhyOpinion() {
         <div className="flex justify-center items-center w-full px-4">
           <h1 className="text-primary text-3xl lg:text-4xl font-bold flex items-center gap-4">
             <span className="w-12 h-1.5 bg-primary rounded-full"></span>
-            WHY YOU PLAY CRIC OPINION
+            WHY YOU PLAY CRICOP
             <span className="w-12 h-1.5 bg-primary rounded-full"></span>
           </h1>
         </div>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover the features that make us the best choice for your gaming and prediction needs.
+        you're not just watching cricket – you're actively shaping the game. Here’s why cricket fans choose <strong>CRICOP</strong>.
         </p>
       </div>
 
@@ -28,19 +28,29 @@ export default function WhyOpinion() {
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-lg">
           {[
             {
-              title: "WITHDRAW WINNINGS INSTANTLY!",
-              text: "80% transactions processed in less than a minute",
+              title: "Transform Your Passion",
+              text: "Convert your cricket insights into rewards. Every prediction you make has the potential to pay off.",
               index: "01",
             },
             {
-              title: "100% SAFE & SECURE",
-              text: "No bots, Only Fun. Customer Support. RNG Approved",
+              title: "Real-Time Engagement",
+              text: "Experience live opinion trading with a vibrant community of fans. Stay ahead with real-time updates and expert analytics.",
               index: "02",
             },
             {
-              title: "PREDICT AND WIN MONEY",
-              text: "Informed predictions and real-time data on Cricket, Kabbadi, Crypto, Bitcoin",
+              title: "Showcase Your Expertise",
+              text: "Whether you’re a seasoned strategist or a passionate newcomer, your voice matters. Prove your cricket IQ and earn respect among peers.",
               index: "03",
+            },
+            {
+              title: "Interactive & Intuitive",
+              text: "Enjoy a user-friendly platform designed exclusively for cricket lovers. Every interaction is smooth, dynamic, and rewarding.",
+              index: "04",
+            },
+            {
+              title: "Be Part of the Revolution",
+              text: "Join a community where every opinion counts. With CRICOP, you’re not just a spectator – you're a game-changer.",
+              index: "05",
             },
           ].map((card, index) => (
             <div
@@ -73,24 +83,34 @@ export default function WhyOpinion() {
           >
             {[
               {
-                title: "WITHDRAW WINNINGS INSTANTLY!",
-                text: "80% transactions processed in less than a minute",
+                title: "Transform Your Passion",
+                text: "Convert your cricket insights into rewards. Every prediction you make has the potential to pay off.",
                 index: "01",
               },
               {
-                title: "100% SAFE & SECURE",
-                text: "No bots, Only Fun. Customer Support. RNG Approved",
+                title: "Real-Time Engagement",
+                text: "Experience live opinion trading with a vibrant community of fans. Stay ahead with real-time updates and expert analytics.",
                 index: "02",
               },
               {
-                title: "PREDICT AND WIN MONEY",
-                text: "Informed predictions and real-time data on Cricket, Kabbadi, Crypto, Bitcoin",
+                title: "Showcase Your Expertise",
+                text: "Whether you’re a seasoned strategist or a passionate newcomer, your voice matters. Prove your cricket IQ and earn respect among peers.",
                 index: "03",
+              },
+              {
+                title: "Interactive & Intuitive",
+                text: "Enjoy a user-friendly platform designed exclusively for cricket lovers. Every interaction is smooth, dynamic, and rewarding.",
+                index: "04",
+              },
+              {
+                title: "Be Part of the Revolution",
+                text: "Join a community where every opinion counts. With CRICOP, you’re not just a spectator – you're a game-changer.",
+                index: "05",
               },
             ].map((card, index) => (
               <SwiperSlide key={index}>
                 <div className="w-[275px] mx-auto bg-white rounded-2xl p-8 flex flex-col items-center justify-center gap-6 border-2 border-transparent transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary cursor-pointer transform hover:-translate-y-2">
-                  <p className="text-sm font-bold text-white bg-[#e57e25] px-3 py-1.5 rounded-lg shadow-md">
+                  <p className="text-sm font-bold text-white bg-primary px-3 py-1.5 rounded-lg shadow-md">
                     {card.index}
                   </p>
                   <p className="text-2xl font-bold text-center text-gray-800">
