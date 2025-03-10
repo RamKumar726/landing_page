@@ -98,14 +98,14 @@ export default function Cards({ noOfCardsInARow }: CardProps) {
         const response = await fetch(
           "https://api.cricapi.com/v1/currentMatches?apikey=66e5c7c2-5660-4be9-babc-aeb7893f6549&offset=0"
         );
-
+  
         if (!response.ok) {
           throw new Error("API request failed");
         }
-
+  
         const data = await response.json();
         console.log(data);
-
+  
         // Filter out matches that have ended and map the remaining matches
         const matches = data.data
           .filter((match: any) => !match.matchEnded) // Exclude matches that have ended
@@ -118,19 +118,19 @@ export default function Cards({ noOfCardsInARow }: CardProps) {
             wickets: match.score[0]?.w || match.score[1]?.w || 0,
             status: match.matchStarted ? "live" : "upcoming", // Determine status
           }));
-
+  
         // Use API data if available, otherwise fall back to constant data
         setMatchData(matches.length > 0 ? matches.slice(0, 6) : constMatchData);
       } catch (error) {
         console.error("Error fetching matches:", error);
-
+  
         // Fall back to constant data if API fails
         setMatchData(constMatchData);
       }
     };
-
+  
     fetchMatches();
-  }, []);
+  }, [constMatchData]); // Add constMatchData as a dependency
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12">
